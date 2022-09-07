@@ -27,7 +27,7 @@ int prompt(void)
 char *_read(void)
 {
 	int i = 0;
-	size_t n = 0; 
+	size_t n = 0;
 	ssize_t count = 0;
 	char *buffer = NULL;
 
