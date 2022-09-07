@@ -8,16 +8,17 @@
  */
 char *_strdup(char *str)
 {
+	int i;
 	char *cpystr;
 
 	if (str == NULL)
 		return (NULL);
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 		;
 	cpystr = malloc(sizeof(char) * (i + 1));
 	if (cpystr == NULL)
 		return (NULL);
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		cpystr[i] = str[i];
 	}
@@ -33,9 +34,9 @@ char *_strdup(char *str)
  */
 int _stringcount(char *str)
 {
-	int count = 0, ping = 1;
+	int i, count = 0, ping = 1;
 
-	for (int i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
 		if (str[i] != ' ' && ping == 1)
 		{
@@ -70,16 +71,18 @@ int _strcmp(const char *c1, const char *c2)
 
 /**
  * _strcat - concatenates strings
- * @str1: adding to 
+ * @str1: adding to
  * @str2: adding from
  *
  * Return: char type
  */
 char *_strcat(char *str1, char *str2)
 {
-	for (int i = 0; str1[i] != '\0'; i++)
+	int i, j;
+
+	for (i = 0; str1[i] != '\0'; i++)
 		;
-	for (int j = 0; str2[j] != '\0'; j++, i++)
+	for (j = 0; str2[j] != '\0'; j++, i++)
 		str1[i] = str2[j];
 	str1[i] = '\0';
 	return (str1);
@@ -92,7 +95,9 @@ char *_strcat(char *str1, char *str2)
  */
 int _strlen(char *s)
 {
-	for (int i = 0; s[i]; i++)
+	int i;
+
+	for (i = 0; s[i]; i++)
 		;
 	return (i);
 }
